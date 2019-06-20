@@ -39,9 +39,9 @@ class PlayerController {
 
         return repository.findById(id)
                 .map(player -> {
-                    player.setFirstName(newPlayer.getFirstName());
-                    player.setLastName(newPlayer.getLastName());
-                    player.setNumber(newPlayer.getNumber());
+                    player.setFirst_name(newPlayer.getFirst_name());
+                    player.setLast_name(newPlayer.getLast_name());
+                    player.setJersey_number(newPlayer.getJersey_number());
                     return repository.save(player);
                 })
                 .orElseGet(() -> {

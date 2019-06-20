@@ -1,6 +1,7 @@
 package com.fortybelow.backend;
 
 import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,25 +9,26 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class Player {
-    private @Id @GeneratedValue Long id;
-    private String firstName;
-    private String lastName;
-    private Integer number;
+    @Id
+    @GeneratedValue Long id;
+    String first_name;
+    String last_name;
+    Integer jersey_number;
 
     Player() {}
 
     Player(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.first_name = firstName;
+        this.last_name = lastName;
     }
 
     Player(String firstName, String lastName, Integer number) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.number = number;
+        this.first_name = firstName;
+        this.last_name = lastName;
+        this.jersey_number = number;
     }
 
     String getFullName() {
-        return firstName + " " + lastName;
+        return first_name + " " + last_name;
     }
 }
