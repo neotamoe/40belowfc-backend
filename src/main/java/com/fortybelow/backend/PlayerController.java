@@ -25,14 +25,12 @@ class PlayerController {
         return repository.save(newPlayer);
     }
 
-    // Single item
+    @GetMapping("/players/{id}")
+    Player one(@PathVariable Long id) {
 
-//    @GetMapping("/players/{id}")
-//    Player one(@PathVariable Long id) {
-//
-//        return repository.findById(id)
-//                .orElseThrow(() -> new PlayerNotFoundException(id));
-//    }
+        return repository.findById(id)
+                .orElseThrow(() -> new PlayerNotFoundException(id));
+    }
 
     @PutMapping("/players/{id}")
     Player replacePlayer(@RequestBody Player newPlayer, @PathVariable Long id) {
