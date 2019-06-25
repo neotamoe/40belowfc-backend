@@ -1,22 +1,26 @@
 package com.fortybelow.backend;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/")
 class PlayerController {
 
-    private final PlayerRepository repository;
+    @Autowired
+    PlayerRepository repository;
 
-    PlayerController(PlayerRepository repository) {
-        this.repository = repository;
-    }
+//    PlayerController(PlayerRepository repository) {
+//        this.repository = repository;
+//    }
 
     // Aggregate root
 
     @GetMapping("/players")
     List<Player> all() {
+        System.out.println("get all players hit me!");
         return repository.findAll();
     }
 
