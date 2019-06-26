@@ -17,7 +17,6 @@ class PlayerController {
 //    }
 
     // Aggregate root
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/players")
     List<Player> all() {
         System.out.println("get all players hit me!");
