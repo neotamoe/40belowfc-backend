@@ -16,10 +16,8 @@ public class Game {
     LocalTime time;
     Integer score_us;
     Integer score_them;
-    @ManyToOne
-    @JoinTable(name = "GAME_RESULT",
-            joinColumns = @JoinColumn(name = "game_id"),
-            inverseJoinColumns = @JoinColumn(name = "result_id"))
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "result_id")
     Result result;
     Integer location_id;
     Integer game_order;
@@ -33,7 +31,7 @@ public class Game {
         this.time = time;
         this.score_us = score_us;
         this.score_them = score_them;
-//        this.result_id = result_id;
+        this.result.id = result_id;
         this.location_id = location_id;
         this.game_order = game_order;
         this.opponent_id = opponent_id;
