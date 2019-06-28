@@ -13,9 +13,10 @@ public class BackendApplication {
     }
 
     @Bean
-    CommandLineRunner initDatabase(PlayerRepository repository) {
+    CommandLineRunner initDatabase(PlayerRepository repository, GameRepository gameRepository) {
         return args -> {
             System.out.println("confirming database connection: " + repository.findAll());
+//            System.out.println("confirming database connection: " + gameRepository.findAll());
         };
     }
 }

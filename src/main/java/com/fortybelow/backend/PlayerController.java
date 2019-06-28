@@ -12,9 +12,9 @@ class PlayerController {
     @Autowired
     PlayerRepository repository;
 
-//    PlayerController(PlayerRepository repository) {
-//        this.repository = repository;
-//    }
+    PlayerController(PlayerRepository repository) {
+        this.repository = repository;
+    }
 
     // Aggregate root
     @GetMapping("/players")
