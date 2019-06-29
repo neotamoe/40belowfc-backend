@@ -19,10 +19,16 @@ public class Game {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "result_id")
     Result result;
-    Integer location_id;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "location_id")
+    Location location;
     Integer game_order;
-    Integer opponent_id;
-    Integer season_id;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "opponent_id")
+    Opponent opponent;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "season_id")
+    Season season;
 
     Game() {}
 
@@ -32,10 +38,10 @@ public class Game {
         this.score_us = score_us;
         this.score_them = score_them;
         this.result.id = result_id;
-        this.location_id = location_id;
+        this.location.id = location_id;
         this.game_order = game_order;
-        this.opponent_id = opponent_id;
-        this.season_id = season_id;
+        this.opponent.id = opponent_id;
+        this.season.id = season_id;
     }
 
 }

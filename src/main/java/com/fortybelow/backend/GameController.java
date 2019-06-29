@@ -42,8 +42,8 @@ class GameController {
                 .map(game -> {
                     game.setDate(newGame.getDate());
                     game.setGame_order(newGame.getGame_order());
-                    game.setLocation_id(newGame.getLocation_id());
-                    game.setOpponent_id(newGame.getOpponent_id());
+                    game.setLocation(newGame.getLocation());
+                    game.setOpponent(newGame.getOpponent());
                     game.setResult(newGame.getResult());
                     game.setScore_them(newGame.getScore_them());
                     game.setScore_us(newGame.getScore_us());
