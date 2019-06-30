@@ -13,11 +13,11 @@ public class Season {
     @GeneratedValue
     Integer id;
     Integer year;
-    Integer month_start;
+    String month_start;
 
     Season() {}
 
-    Season(Integer monthStart, Integer year) {
+    Season(String monthStart, Integer year) {
         this.month_start = monthStart;
         this.year = year;
     }

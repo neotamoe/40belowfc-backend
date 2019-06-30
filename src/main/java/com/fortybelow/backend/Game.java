@@ -29,10 +29,11 @@ public class Game {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "season_id")
     Season season;
+    Boolean is_playoff_game;
 
     Game() {}
 
-    Game(LocalDate date, LocalTime time, Integer score_us, Integer score_them, Integer result_id, Integer location_id, Integer game_order, Integer opponent_id, Integer season_id) {
+    Game(LocalDate date, LocalTime time, Integer score_us, Integer score_them, Integer result_id, Integer location_id, Integer game_order, Integer opponent_id, Integer season_id, Boolean is_playoff_game) {
         this.date = date;
         this.time = time;
         this.score_us = score_us;
@@ -42,6 +43,7 @@ public class Game {
         this.game_order = game_order;
         this.opponent.id = opponent_id;
         this.season.id = season_id;
+        this.is_playoff_game = is_playoff_game;
     }
 
 }

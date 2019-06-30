@@ -47,6 +47,7 @@ class GameController {
                     game.setResult(newGame.getResult());
                     game.setScore_them(newGame.getScore_them());
                     game.setScore_us(newGame.getScore_us());
+                    game.setIs_playoff_game(newGame.getIs_playoff_game());
                     return repository.save(game);
                 })
                 .orElseGet(() -> {
