@@ -46,4 +46,8 @@ public class Game {
         this.is_playoff_game = is_playoff_game;
     }
 
+    boolean isSeasonChampion(){
+        return this.is_playoff_game && this.game_order == 8 && this.score_us > this.score_them;
+    }
+
 }
