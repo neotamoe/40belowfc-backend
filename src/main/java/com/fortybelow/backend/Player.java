@@ -14,6 +14,7 @@ public class Player {
     String first_name;
     String last_name;
     Integer jersey_number;
+    Boolean is_current;
 
     Player() {}
 

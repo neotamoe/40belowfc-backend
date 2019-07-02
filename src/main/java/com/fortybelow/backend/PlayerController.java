@@ -23,6 +23,11 @@ class PlayerController {
         return repository.findAll();
     }
 
+    @GetMapping("/players/current")
+    List<Player> current() {
+        return repository.findAllPlayersByIs_current(true);
+    }
+
     @PostMapping("/players")
     Player newPlayer(@RequestBody Player newPlayer) {
         return repository.save(newPlayer);
