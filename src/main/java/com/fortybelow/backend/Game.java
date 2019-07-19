@@ -10,7 +10,8 @@ import java.time.LocalTime;
 @Entity
 public class Game {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="game_id_seq")
+    @SequenceGenerator(name="game_id_seq", sequenceName="game_id_seq", allocationSize=1)
     Integer id;
     LocalDate date;
     LocalTime time;

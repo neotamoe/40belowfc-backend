@@ -2,15 +2,15 @@ package com.fortybelow.backend;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class Player {
     @Id
-    @GeneratedValue Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="player_id_seq")
+    @SequenceGenerator(name="player_id_seq", sequenceName="player_id_seq", allocationSize=1)
+    Long id;
     String first_name;
     String last_name;
     Integer jersey_number;

@@ -2,15 +2,14 @@ package com.fortybelow.backend;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class Season {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="season_id_seq")
+    @SequenceGenerator(name="season_id_seq", sequenceName="season_id_seq", allocationSize=1)
     Integer id;
     Integer year;
     String month_start;
