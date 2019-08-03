@@ -13,7 +13,9 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="game_id_seq")
     @SequenceGenerator(name="game_id_seq", sequenceName="game_id_seq", allocationSize=1)
     Integer id;
+//    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")  // not working yet
     LocalDate date;
+//    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm:ss")  // not working yet
     LocalTime time;
     Integer score_us;
     Integer score_them;
@@ -23,6 +25,8 @@ public class Game {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "location_id")
     Location location;
+//    @Column(name = "location_id", updatable = false, insertable = false)
+//    Integer location_id;
     Integer game_order;
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "opponent_id")
